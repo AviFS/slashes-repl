@@ -1,0 +1,19 @@
+.inputPost .ouputPost .applyPost {
+    font-weight: bold;
+}
+
+.input .output {
+
+}
+
+.slash {
+    color: grey;
+}
+
+.pattern {
+    color: red;
+}
+
+.replacement {
+    color: green;
+}

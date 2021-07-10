@@ -52,6 +52,9 @@ Repeat.
 
 function slash(prog) {
 
+
+    var all = "<span class='inputPost'>Input:</span> <span class='input'>"+prog+'</span><br>';
+
     var res = "";
 
     var state = 0;
@@ -69,9 +72,19 @@ function slash(prog) {
 
     while (prog) {
     var curr = prog[0];
-        console.log(pattern);
+    // all += prog + '\n';
+        // console.log(pattern);
         if (state == 3) {
-            while (prog.includes(pattern)) { prog = prog? prog.replace(pattern, replacement) : prog; }
+            while (prog.includes(pattern)) {
+            prog = prog? prog.replace(pattern, replacement) : prog;
+            // Just `prog = prog.replace(pat, rep);` might be good enough
+            // Was trying to get rid of the null character that was printing
+            // Thought maybe the replacement with an empty string pattern was undefined
+            all += "<span class='applyPost'>Apply:</span> " + 
+                    "<span class='slash'>/</span>"          + "<span class='pattern'>"     +   pattern   + "</span>" +
+                    "<span class='slash'>/</span>"          + "<span class='replacement'>" + replacement + "</span>" + 
+                    "<span class = 'slash'>/</span>"        + prog + "<br>";
+            }
             pattern = ""; replacement = "";
             state = 0;
             console.log(curr);
@@ -83,6 +96,12 @@ function slash(prog) {
             prog = prog.slice(1);
         }
     }
-    return res;
+    return all+"<span class='outputPost'>Output:</span> <span class='output'>"+res+'</span>';
 
+}
+
+function run() {
+    var input = document.getElementById("input");
+    var output = document.getElementById("output");
+    output.innerHTML = slash(input.value);//.replaceAll("\n", "<br>");
 }
