@@ -64,33 +64,41 @@ function slash(prog) {
 
 
     function doSomething() {
+        curr = prog[0];
         if (state == 0) { res += curr; }
         if (state == 1) { pattern += curr; }
         if (state == 2) { replacement += curr; }
     }
 
 
+    function printApply() {
+        all += "<span class='applyPost'>Apply:</span> " + 
+                "<span class='slash'>/</span>"          + "<span class='pattern'>"     +   pattern   + "</span>" +
+                "<span class='slash'>/</span>"          + "<span class='replacement'>" + replacement + "</span>" + 
+                "<span class = 'slash'>/</span>"        + prog + "<br>";
+    }
+
     while (prog) {
+        console.log(prog);
     var curr = prog[0];
     // all += prog + '\n';
         // console.log(pattern);
         if (state == 3) {
+            var isVerbose = document.getElementById("verbose").checked;
             while (prog.includes(pattern)) {
             prog = prog? prog.replace(pattern, replacement) : prog;
             // Just `prog = prog.replace(pat, rep);` might be good enough
             // Was trying to get rid of the null character that was printing
             // Thought maybe the replacement with an empty string pattern was undefined
-            all += "<span class='applyPost'>Apply:</span> " + 
-                    "<span class='slash'>/</span>"          + "<span class='pattern'>"     +   pattern   + "</span>" +
-                    "<span class='slash'>/</span>"          + "<span class='replacement'>" + replacement + "</span>" + 
-                    "<span class = 'slash'>/</span>"        + prog + "<br>";
+            if (isVerbose) { printApply(); }
             }
+            if (!isVerbose) { printApply(); }
             pattern = ""; replacement = "";
             state = 0;
             console.log(curr);
         }
         else {
-            if (curr == '\\') { doSomething(); prog = prog.slice(1); }
+            if (curr == '\\') { prog = prog.slice(1); doSomething(); }
             else if (curr == '/') { state++; }
             else { doSomething(); }
             prog = prog.slice(1);
