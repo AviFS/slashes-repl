@@ -1,9 +1,59 @@
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+}
+
+body,textarea {
+    background: #202020;
+    color: #C0C0C0;
+}
+
+
+#language {
+}
+
+
+textarea {
+    font-size: 16px;
+    font-family: "DejaVu Sans Mono", monospace;
+    background: #202020;
+    border-radius: 4px;
+    border: 1px solid rgb(0,122,255);
+}
+
+#output {
+    border: 0px;
+}
+
+.outer {
+    display: grid;
+    grid-row-gap: 50px;
+    /*grid-template: 1fr / 1fr;
+    place-items: center;*/
+}
+
+#language-div {
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+#input-container {
+    grid-row-start: 2;
+    grid-row-end: 3;
+}
+
+.inner {
+    grid-area: inner-div;
+}
+
+
 .inputPost .ouputPost .applyPost {
     font-weight: bold;
 }
 
 .input .output {
-
+    font-weight: bolder;
 }
 
 .slash {
@@ -11,7 +61,7 @@
 }
 
 .pattern {
-    color: red;
+    color: maroon;
 }
 
 .replacement {

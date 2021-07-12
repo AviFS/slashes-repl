@@ -52,10 +52,14 @@ Repeat.
 
 function slash(prog) {
 
-
+    // Accumulator for generated explanatory HTML
     var all = "<span class='inputPost'>Input:</span> <span class='input'>"+prog+'</span><br>';
 
+    // Accumulator for actual output from the slashes program
     var res = "";
+
+    // Accumulator for string to be printed in state 0
+    var print = "";
 
     var state = 0;
     var pattern = "";
@@ -65,13 +69,16 @@ function slash(prog) {
 
     function doSomething() {
         curr = prog[0];
-        if (state == 0) { res += curr; }
+        if (state == 0) { print += curr; }
         if (state == 1) { pattern += curr; }
         if (state == 2) { replacement += curr; }
     }
 
+    function logPrint() {
+        all += "<span class='printPost'>Print:<span> " + print + "<br>";
+    }
 
-    function printApply() {
+    function logApply() {
         all += "<span class='applyPost'>Apply:</span> " + 
                 "<span class='slash'>/</span>"          + "<span class='pattern'>"     +   pattern   + "</span>" +
                 "<span class='slash'>/</span>"          + "<span class='replacement'>" + replacement + "</span>" + 
@@ -83,6 +90,8 @@ function slash(prog) {
     var curr = prog[0];
     // all += prog + '\n';
         // console.log(pattern);
+        // Just for displaying
+        if (state == 1 && print!="") { logPrint(); res += print; print = ""; }
         if (state == 3) {
             var isVerbose = document.getElementById("verbose").checked;
             while (prog.includes(pattern)) {
@@ -90,9 +99,9 @@ function slash(prog) {
             // Just `prog = prog.replace(pat, rep);` might be good enough
             // Was trying to get rid of the null character that was printing
             // Thought maybe the replacement with an empty string pattern was undefined
-            if (isVerbose) { printApply(); }
+            if (isVerbose) { logApply(); }
             }
-            if (!isVerbose) { printApply(); }
+            if (!isVerbose) { logApply(); }
             pattern = ""; replacement = "";
             state = 0;
             console.log(curr);
@@ -104,6 +113,8 @@ function slash(prog) {
             prog = prog.slice(1);
         }
     }
+    // In case program ended in state 0 and there's still stuff to be printed
+    if (print!="") { logPrint(); res += print; print = ""; }
     return all+"<span class='outputPost'>Output:</span> <span class='output'>"+res+'</span>';
 
 }
