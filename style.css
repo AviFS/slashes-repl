@@ -1,6 +1,7 @@
 body {
     padding-top: 30px;
-    padding-left: 400px;
+    max-width: max-content;
+    margin: auto; 
 }
 h1 {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
