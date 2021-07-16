@@ -50,6 +50,8 @@ Repeat.
 
 */
 
+var isRunning = false;
+
 function slash(prog) {
 
     // Accumulator for generated explanatory HTML
@@ -85,7 +87,7 @@ function slash(prog) {
                 "<span class = 'slash'>/</span>"        + prog + "<br>";
     }
 
-    while (prog) {
+    while (isRunning && prog) {
         console.log(prog);
     var curr = prog[0];
     // all += prog + '\n';
@@ -115,6 +117,7 @@ function slash(prog) {
     }
     // In case program ended in state 0 and there's still stuff to be printed
     if (print!="") { logPrint(); res += print; print = ""; }
+    isRunning = false;
     return all+"<span class='outputPost'>Output:</span> <span class='output'>"+res+'</span>';
 
 }
