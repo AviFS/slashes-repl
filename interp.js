@@ -119,8 +119,17 @@ function slash(prog) {
 
 }
 
+// var newline = "\n";
+// var newline = "|";
+// var newline = "\\n";
+// var newline = "¶";
+// var newline = "␤";
+// var newline = "␍";
+var newline = "⏎";
+
 function run() {
     var input = document.getElementById("input");
     var output = document.getElementById("output");
-    output.innerHTML = slash(input.value);//.replaceAll("\n", "<br>");
+    var result = slash(input.value);
+    output.innerHTML = result.replace(/\n/g, "<span class='newline'>"+newline+"</span>");//.replaceAll("\n", "<br>");
 }

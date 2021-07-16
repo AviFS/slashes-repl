@@ -8,5 +8,8 @@
     <input type="checkbox" id="verbose" checked><br>
     <textarea rows=10 cols=50 id="input"></textarea>
     <button type="button" id="run" onclick="run();">Run</button><br>
-    <div id="output" style="font-family: monospace;"></div>
+    <!-- <pre> important: it preserves formatting in ouput-->
+    <!-- eg. without it consecutive spaces are condensed and newlines ignored -->
+    <pre id="output" style="font-family: monospace;">alksfj
+    aslfj    alsdjf</pre>
 </body>
