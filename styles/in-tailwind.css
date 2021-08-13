@@ -1,4 +1,35 @@
 @tailwind base;
 @tailwind components;
+
+
+.inputPost .ouputPost .applyPost {
+    font-weight: bold;
+}
+
+.input .output {
+    font-weight: bolder;
+}
+
+.slash {
+    color: grey;
+    @apply text-gray-600
+}
+
+.pattern {
+    color: maroon;
+    @apply text-red-400;
+}
+
+.replacement {
+    color: green;
+    @apply text-green-500;
+}
+
+.newline {
+    /* color: grey; */
+    opacity: 40%;
+    color: white;
+}
+
 @tailwind utilities;
 @tailwind variants;

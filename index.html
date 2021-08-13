@@ -4,17 +4,20 @@
     <script src="interp.js"></script>
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="styles/out-tailwind.css">
+    <link rel="stylesheet" href="styles/jit-tailwind.css">
 </head>
-<body class="">
-    <input class=""
-        type="checkbox" id="verbose" checked><br>
-    <textarea class=""
-        rows=10 cols=50 id="input"></textarea>
-    <button class=""
-        type="button" id="run" onclick="run();">Run</button><br>
-    <!-- <pre> important: it preserves formatting in ouput-->
-    <!-- eg. without it consecutive spaces are condensed and newlines ignored -->
-    <pre class=""
-        id="output" style="font-family: monospace;">
-    Hello world</pre>
+<body class="bg-gray-800">
+    <div class="flex flex-col justify-center mx-8">
+        <input class=""
+            type="checkbox" id="verbose" checked><br>
+        <textarea class="pt-1 pl-2 font-mono text-xs text-gray-400 bg-gray-700 border-0 rounded-md shadow-md resize-none drop-shadow-none"
+            rows=10 cols=50 id="input">/foo/Hello, world!//bar/foo/bar</textarea>
+        <button class="self-center inline px-2 py-1 mt-4 bg-gray-500 rounded-lg hover:bg-gray-400 active:bg-gray-600"
+            type="button" id="run" onclick="run();">Run</button><br>
+        <!-- <pre> important: it preserves formatting in ouput-->
+        <!-- eg. without it consecutive spaces are condensed and newlines ignored -->
+        <pre class="text-gray-400"
+            id="output" style="font-family: monospace;"
+            >Input:</span> <span class='input'>/foo/Hello, world!//bar/foo/bar</span><br><span class='applyPost'>Apply:</span> <span class='slash'>/</span><span class='pattern'>foo</span><span class='slash'>/</span><span class='replacement'>Hello, world!</span><span class = 'slash'>/</span>/bar/Hello, world!/bar<br><span class='applyPost'>Apply:</span> <span class='slash'>/</span><span class='pattern'>bar</span><span class='slash'>/</span><span class='replacement'>Hello, world!</span><span class = 'slash'>/</span>Hello, world!<br><span class='printPost'>Print:<span> Hello, world!<br><span class='outputPost'>Output:</span> <span class='output'>Hello, world!</span> </pre>
+    </div>
 </body>
