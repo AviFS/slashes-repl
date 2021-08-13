@@ -1,0 +1,24 @@
+html,body,#vert-flex-container {
+    height: 100%;
+}
+
+#vert-flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+#top-flex-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+#input {
+    /* display: flex; */
+    flex-grow: 1;
+}
+
+#output {
+    /* display: flex; */
+    /* flex-direction: column; */
+}

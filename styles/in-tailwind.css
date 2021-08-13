@@ -32,7 +32,18 @@
 }
 
 #input {
-    @apply self-center pt-1 pl-2 mt-8 font-mono text-base text-gray-400 bg-gray-700 border-0 rounded-md shadow-xl resize-none backdrop-blur-2xl drop-shadow-md;
+    @apply pt-1 pl-2 mt-8 font-mono text-base text-gray-400 bg-gray-700 border-0 rounded-md shadow-xl resize-none backdrop-blur-2xl drop-shadow-md;
+}
+
+#vert-flex-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+body {
+    height: 100%;
 }
 
 @tailwind utilities;

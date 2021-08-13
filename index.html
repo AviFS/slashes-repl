@@ -5,15 +5,18 @@
     <!-- <link rel="stylesheet" href="style.css"> -->
     <link rel="stylesheet" href="styles/out-tailwind.css">
     <link rel="stylesheet" href="styles/jit-tailwind.css">
+    <link rel="stylesheet" href="styles/flex.css">
 </head>
-<body class="bg-gray-800">
-    <div class="flex flex-col justify-center px-8 pt-8 mx-2 sm:px-36">
-        <input class="w-5 h-5 text-blue-600 rounded-md form-checkbox opacity-20"
-            type="checkbox" id="verbose" checked><br>
-        <textarea class="w-full h-full"
+<body id="vert-flex-container" class="bg-gray-800">
+    <div id="vert-flex-container" class="px-8 pt-8 mx-2 sm:px-36">
+        <div id="top-flex-container">
+            <input class="self-center w-5 h-5 text-blue-600 rounded-md form-checkbox opacity-20"
+                type="checkbox" id="verbose" checked><br>
+            <button class="self-center inline px-2 py-1 mt-4 bg-gray-500 rounded-lg self-begin hover:bg-gray-400 active:bg-gray-600"
+                type="button" id="run" onclick="run();">Run</button><br>
+        </div>
+        <textarea class=""
             id="input">/foo/Hello, world!//bar/foo/bar</textarea>
-        <!-- <button class="inline px-2 py-1 mt-4 bg-gray-500 rounded-lg self-begin hover:bg-gray-400 active:bg-gray-600"
-            type="button" id="run" onclick="run();">Run</button><br> -->
         <!-- <pre> important: it preserves formatting in ouput-->
         <!-- eg. without it consecutive spaces are condensed and newlines ignored -->
         <pre class="mt-6 font-mono text-base text-gray-400 sm:mt-10"
