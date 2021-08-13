@@ -31,5 +31,9 @@
     color: white;
 }
 
+#input {
+    @apply self-center pt-1 pl-2 mt-8 font-mono text-base text-gray-400 bg-gray-700 border-0 rounded-md shadow-xl resize-none backdrop-blur-2xl drop-shadow-md;
+}
+
 @tailwind utilities;
 @tailwind variants;
