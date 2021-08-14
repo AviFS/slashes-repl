@@ -9,12 +9,18 @@
 </head>
 <body onload="init();" class="my-4 bg-gray-800">
     <div id="vert-flex-container" class="px-8 pt-8 mx-2 sm:px-36">
-        <div id="top-flex-container" class="absolute invisible">
-            <input class="self-center w-5 h-5 text-blue-600 rounded-md form-checkbox opacity-20"
-                type="checkbox" id="verbose" checked><br>
-            <button class="self-center inline px-2 py-1 mt-4 bg-gray-500 rounded-lg hover:bg-gray-400 active:bg-gray-600"
+        <div id="top-flex-container" class="flex justify-start w-96">
+            <div id="verbose-wrapper" class='self-center justify-start'>
+            <label for="verbose" class="pr-1 font-mono text-gray-400 drop-shadow-lg">--verbose</label>
+            <input class="self-center w-6 h-6 text-gray-900 bg-gray-900 rounded-md shadow-lg cursor-pointer drop-shadow-sm justify-self-start form-checkbox" 
+                type="checkbox" id="verbose" checked>
+            </div>
+            <!-- <div id="mid-padding"></div> -->
+            <!-- -translate-y-0.5 -->
+            <button class="self-center px-3 py-1 ml-6 font-mono text-gray-500 transform bg-black rounded-lg shadow-xl hover:bg-gray-400 hover:text-gray-900 active:bg-gray-600 drop-shadow-sm hover:drop-shadow-md"
                 type="button" id="run" onclick="run();">Run</button><br>
         </div>
+
         <textarea class=""
             id="input">/foo/Hello, world!//bar/foo/bar</textarea>
         <!-- <pre> important: it preserves formatting in ouput-->

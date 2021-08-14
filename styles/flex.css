@@ -24,3 +24,14 @@ html,body,#vert-flex-container {
     /* display: flex; */
     /* flex-direction: column; */
 }
+
+/* #verbose-wrapper {
+    background-color: antiquewhite;
+    border-radius: 5px;
+    padding: .1em .5em
+} */
+
+#mid-padding {
+    flex-grow: 1;
+    flex-basis: 0;
+}
