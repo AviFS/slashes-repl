@@ -50,6 +50,17 @@ Repeat.
 
 */
 
+function init() {
+    document.getElementById('input').addEventListener('keydown', function(e) {
+        if (e.keyCode == 13 && e.shiftKey)
+        {
+        e.preventDefault();
+        run();
+        }
+        console.log(e);
+    });
+}
+
 function slash(prog) {
 
     // Accumulator for generated explanatory HTML
