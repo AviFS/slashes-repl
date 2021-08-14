@@ -720,9 +720,12 @@ body {
   height: 100%;
 }
 
-.mx-2 {
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+.invisible {
+  visibility: hidden;
+}
+
+.absolute {
+  position: absolute;
 }
 
 .my-4 {
@@ -730,9 +733,9 @@ body {
   margin-bottom: 1rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
+.mx-2 {
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
 }
 
 .mt-4 {
@@ -790,11 +793,6 @@ body {
 .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .pt-8 {
