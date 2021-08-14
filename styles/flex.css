@@ -1,5 +1,5 @@
 html,body,#vert-flex-container {
-    height: 100%;
+    height: 97.8%;
 }
 
 #vert-flex-container {
@@ -19,6 +19,8 @@ html,body,#vert-flex-container {
 }
 
 #output {
+    overflow-x: hidden;
+    overflow-y: auto;
     /* display: flex; */
     /* flex-direction: column; */
 }
