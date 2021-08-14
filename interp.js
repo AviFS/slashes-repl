@@ -49,6 +49,7 @@ Repeat.
 
 
 */
+var MAX_ITERS = 128;
 
 function init() {
     document.getElementById('input').addEventListener('keydown', function(e) {
@@ -105,12 +106,15 @@ function slash(prog) {
         if (state == 1 && print!="") { logPrint(); res += print; print = ""; }
         if (state == 3) {
             var isVerbose = document.getElementById("verbose").checked;
+            var iters = 0;
             while (prog.includes(pattern)) {
-            prog = prog? prog.replace(pattern, replacement) : prog;
-            // Just `prog = prog.replace(pat, rep);` might be good enough
-            // Was trying to get rid of the null character that was printing
-            // Thought maybe the replacement with an empty string pattern was undefined
-            if (isVerbose) { logApply(); }
+                if (iters > MAX_ITERS) { print+='...'; break; }
+                iters++;
+                prog = prog? prog.replace(pattern, replacement) : prog;
+                // Just `prog = prog.replace(pat, rep);` might be good enough
+                // Was trying to get rid of the null character that was printing
+                // Thought maybe the replacement with an empty string pattern was undefined
+                if (isVerbose) { logApply(); }
             }
             if (!isVerbose) { logApply(); }
             pattern = ""; replacement = "";
