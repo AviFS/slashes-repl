@@ -6,8 +6,8 @@ You can play around with it on my interpreter here, or read more about it on the
 
 And here's a [binary to unary converter](https://esolangs.org/wiki////#Binary_to_unary_conversion) with `--verbose` enabled, and without.
 
-![Binary to Unary](images/bin2un.png | width=100)
+<img src="images/bin2un.png" alt="Binary to Unary" width="100"></img>
 
-![Binary to Unary --verbose](images/bin2un-verbose.png | width=100)
+<img src="images/bin2un-verbose.png" alt="Binary to Unary --verbose" width="100"></img>
 
 Does the `--verbose` output help you understand how this program works? No? Me neither! But I promise it's often helpful.
